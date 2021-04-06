@@ -1,0 +1,12 @@
+[
+  {
+    "email": "admin@admin.com",
+    "password": "test",
+    "username": "test",
+    "hasAccessToProduct": true,
+    "isEnabledAgainstProduct" : true,
+    "roles" : ["adimn"],
+    "productUserId" : "123",
+    "organisation_id": "null"
+  }
+]
