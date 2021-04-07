@@ -6,8 +6,11 @@
     "fullName": "test full name",
     "hasAccessToProduct": true,
     "isEnabledAgainstProduct" : true,
-    "roles" : ["adimn"],
-    "productUserId" : "123",
-    "organisation_id": "null"
+    "productSpecificClaims" : [
+      { "claimKey": "claim value" },
+      { "claimKey": "claim value" }
+    ],
+    "productSpecificId" : "123",
+    "organisation_id": "123"
   }
 ]

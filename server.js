@@ -63,15 +63,15 @@ app.get('/api/v1/users/:email', checkJwt, function (req, res) {
   }
 });
 
-app.get('/security/api/v1/users/:email/accesscontrol/:organisation_id', function (req, res) {
-  const user = users.find(u => u.email === req.params.email && u.organisation_id == req.params.organisation_id);
+app.get('/api/v1/users/:email/accessControl/:organisation_id?', function (req, res) {
+  const user = users.find(u => u.email === req.params.email);
 
   if (user) {
     res.status(200).json({
       "hasAccessToProduct": user.hasAccessToProduct,
       "isEnabledAgainstProduct": user.isEnabledAgainstProduct,
-      "roles": user.roles,
-      "productUserId": user.productUserId,
+      "productSpecificId": user.productSpecificId,
+      "productSpecificClaims": user.productSpecificClaims
     });
   } else {
     res.status(404).json({
