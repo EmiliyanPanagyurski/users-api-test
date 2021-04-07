@@ -48,13 +48,13 @@ app.post('/api/v1/users/verify', checkJwt, function (req, res) {
   }
 });
 
-app.get('/api/users/:email', checkJwt, function (req, res) {
+app.get('/api/v1/users/:email', checkJwt, function (req, res) {
   const user = users.find(u => u.email === req.body.email);
 
   if (user) {
     res.status(200).json({
       nickname: user.username,
-      fullName: user.fullname
+      fullName: user.fullName
     });
   } else {
     res.status(404).json({

@@ -3,6 +3,7 @@
     "email": "admin@admin.com",
     "password": "test",
     "username": "test",
+    "fullName": "test full name",
     "hasAccessToProduct": true,
     "isEnabledAgainstProduct" : true,
     "roles" : ["adimn"],
