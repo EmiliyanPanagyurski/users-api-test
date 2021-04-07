@@ -29,19 +29,21 @@ const checkJwt = jwt({
 
 app.use(bodyParser.json({ extended: true }));
 
-app.post('/api/authentivate/user', checkJwt, function (req, res) {
+app.post('/api/v1/users/verify', checkJwt, function (req, res) {
   const user = users.find(u => u.email === req.body.email);
   if (user) {
     if (user.password === req.body.password) {
       res.status(200).json({
-        name: user.username,
-        id: Math.random(),
-        email: user.email
+        credentialsValid: true,
+      });
+    } else {
+      res.status(200).json({
+        credentialsValid: false,
       });
     }
   } else {
     res.status(404).json({
-      message: 'User not foundcccc.'
+      message: 'User not found.'
     });
   }
 });
@@ -51,8 +53,8 @@ app.get('/api/users/:email', checkJwt, function (req, res) {
 
   if (user) {
     res.status(200).json({
-      nickname: 'username',
-      email: req.params.email
+      nickname: user.username,
+      fullName: user.fullname
     });
   } else {
     res.status(404).json({
