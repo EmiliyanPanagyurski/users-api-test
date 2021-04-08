@@ -68,10 +68,10 @@ app.get('/api/v1/users/:email/accessControl/:organisation_id?', function (req, r
 
   if (user) {
     res.status(200).json({
-      "hasAccessToProduct": user.hasAccessToProduct,
-      "isEnabledAgainstProduct": user.isEnabledAgainstProduct,
-      "productSpecificId": user.productSpecificId,
-      "productSpecificClaims": user.productSpecificClaims
+      "hasAccess": user.hasAccess,
+      "isEnabled": user.isEnabled,
+      "productSpecificNamespace": user.productSpecificNamespace,
+      "productSpecificClaimsNamespace": user.productSpecificClaims
     });
   } else {
     res.status(404).json({

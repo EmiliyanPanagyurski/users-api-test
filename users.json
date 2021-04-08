@@ -4,11 +4,12 @@
     "password": "test",
     "username": "test",
     "fullName": "test full name",
-    "hasAccessToProduct": true,
-    "isEnabledAgainstProduct" : true,
+    "hasAccess": true,
+    "isEnabled" : true,
+    "productSpecificNamespace": "https://sonar.junipereducation.org",
     "productSpecificClaims" : [
-      { "claimKey": "claim value" },
-      { "claimKey": "claim value" }
+      { "id": "123" },
+      { "roles": "10001000101010" }
     ],
     "productSpecificId" : "123",
     "organisation_id": "123"
